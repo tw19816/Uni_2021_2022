@@ -10,13 +10,20 @@ Simulation for the decay of a particle
     * lifetime from an exponential distribution w. specified lifetime
 
 **Solutions:**
-* Compute the transformation function analytically
+* normal distribution function already exists in numpy
+* exponential function already exists in numpy
 
 ### Particle decay (daughter particle creation)
 **Requirements:**
 * Create daughter particle which is isotropic in space
     * determine direction vector from unit sphere with uniform probability derivative of solid angle
-
+    * need uniform distribution between U(a, b)
+    * need distribution proportional to sin(theta) with theta between 0 and pi
+**Solutions:**
+* Use uniform numpy uniform distribution
+* Sin(theta) dist:
+    * use analytical solution
+    * test accept/reject solution in case it is faster
 ### Propagation to tracking stations
 **Requirements:**
 * create a particle track outwards from the decay vertex in the lab frame
@@ -27,6 +34,8 @@ Simulation for the decay of a particle
 * Smearing particle position, i.e. add an offset
     * offset given by normal distribution w. specified mean and std. dev.
 
+**Solutions:**
+* use numpy normal distribution
 ### Track reconstruction
 **Requirements:**
 * Reconstruct the track in space (we do not worry about time)
