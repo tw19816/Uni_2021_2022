@@ -19,8 +19,9 @@ Simulation for the decay of a particle
     * determine direction vector from unit sphere with uniform probability derivative of solid angle
     * need uniform distribution between U(a, b)
     * need distribution proportional to sin(theta) with theta between 0 and pi
+
 **Solutions:**
-* Use uniform numpy uniform distribution
+* Use uniform numpy uniform distribution use default_rng (numpy)
 * Sin(theta) dist:
     * use analytical solution
     * test accept/reject solution in case it is faster
